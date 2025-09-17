@@ -1,5 +1,5 @@
 // 你的专属秘密暗号，可以修改
-const CORRECT_PASSWORD = "loveyousister";
+const CORRECT_PASSWORD = "000726";
 
 // 检查密码函数
 function checkPassword() {
@@ -28,7 +28,7 @@ function checkPassword() {
         
     } else {
         // 密码错误
-        errorMessage.textContent = "暗号不对哦，再想想！";
+        errorMessage.textContent = "密码不对哦，再想想！";
         const passwordInput = document.getElementById('password-input');
         passwordInput.classList.add('error-shake');
         setTimeout(() => {
