@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给最爱的姐姐的生日惊喜！</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- 密码输入界面 -->
+    <div id="password-container" class="container">
+        <h1>生日惊喜！</h1>
+        <p>请输入我们之间的“秘密暗号”</p >
+        <input type="password" id="password-input" placeholder="提示：你最爱的...？">
+        <button onclick="checkPassword()">打开惊喜</button>
+        <p id="error-message" class="error"></p >
+    </div>
+
+    <!-- 生日祝福主内容 (默认隐藏) -->
+    <div id="main-content" class="container hidden">
+        <!-- 背景音乐 -->
+        <audio id="bg-music" src="music/background.mp3" loop></audio>
+
+        <!-- 祝福语和动画 -->
+        <header>
+            <h1 class="typing">祝我最亲爱的姐姐，生日快乐！🎂</h1>
+            <p>时光飞逝，又是一年。愿你永远开心，永远是我们的小公主！</p >
+        </header>
+
+        <!-- 互动礼物区 -->
+        <section id="interactive-gifts">
+            <h2>点开属于你的小礼物吧！</h2>
+            <div class="gift-row">
+                <div class="gift" onclick="showMessage('gift1')">
+                    < img src="images/gift-box.png" alt="礼物1">
+                    <p>一份心意</p >
+                </div>
+                <div class="gift" onclick="showMessage('gift2')">
+                    < img src="images/gift-box.png" alt="礼物2">
+                    <p>一些回忆</p >
+                </div>
+                <div class="gift" onclick="showMessage('gift3')">
+                    < img src="images/gift-box.png" alt="礼物3">
+                    <p>一个愿望</p >
+                </div>
+            </div>
+            <!-- 礼物对应的隐藏消息 -->
+            <div id="gift1-message" class="hidden-message">这是我想对你说的话：...（替换成你的话）</div>
+            <div id="gift2-message" class="hidden-message">我们一起经历的点点滴滴，都记在心里！...（替换成你的话）</div>
+            <div id="gift3-message" class="hidden-message">新的一岁，我祝你...（替换成你的祝福）</div>
+        </section>
+
+        <!-- 照片相册 -->
+        <section id="photo-gallery">
+            <h2>我们的回忆相册</h2>
+            <div class="gallery-container">
+                <!-- 在这里添加你们的照片 -->
+                <div class="photo-item">< img src="images/photo1.jpg" alt="回忆1"></div>
+                <div class="photo-item">< img src="images/photo2.jpg" alt="回忆2"></div>
+                <div class="photo-item">< img src="images/photo3.jpg" alt="回忆3"></div>
+                <div class="photo-item">< img src="images/photo4.jpg" alt="回忆4"></div>
+                <!-- 可以添加更多照片 -->
+            </div>
+        </section>
+
+        <!-- 最后的祝福 -->
+        <footer>
+            <p>From your loving 弟弟/妹妹, [你的名字]</p >
+            <button onclick="playConfetti()">为姐姐献上漫天礼花！</button>
+        </footer>
+    </div>
+    
+    <!-- 引入外部JS库，实现酷炫的纸屑效果 -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
